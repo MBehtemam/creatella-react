@@ -25,13 +25,16 @@ export default class Sort extends React.Component {
   render() {
     return (
       <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-        <DropdownToggle caret>Sort</DropdownToggle>
+        <DropdownToggle caret>Sort By</DropdownToggle>
         <DropdownMenu>
           <DropdownItem header>Sort On Server</DropdownItem>
           <DropdownItem>Id</DropdownItem>
           <DropdownItem>Size</DropdownItem>
           <DropdownItem>Price</DropdownItem>
-          <DropdownItem header>Sort On Client</DropdownItem>
+          <DropdownItem>Clear Sort</DropdownItem>
+          <DropdownItem header disabled>
+            Sort On Client
+          </DropdownItem>
           <DropdownItem>Id</DropdownItem>
           <DropdownItem>Size</DropdownItem>
           <DropdownItem>Price</DropdownItem>
