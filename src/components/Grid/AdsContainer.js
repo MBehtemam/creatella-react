@@ -1,13 +1,35 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { Card, CardImg, CardText, CardBody } from "reactstrap";
-
-export default class AdsContainer extends Component {
+import Actions from "Creatella-business-logic/Shared/components/Ads/Actions";
+import State from "Creatella-business-logic/Shared/components/Ads/State";
+class MyAdsContainer extends Component {
+  state = {
+    adsId: null
+  };
+  componentDidMount() {
+    const adsId = `ads-${Date.now()}`;
+    this.props.getRandomAdsId(adsId);
+    this.setState({ adsId });
+  }
   render() {
+    const { IDS } = this.props.ads;
     return (
       <Card>
-        <CardImg width="100%" src="https://picsum.photos/320/200?image=9" />
+        {IDS.hasOwnProperty(this.state.adsId) && (
+          <CardImg
+            width="100%"
+            src={`https://picsum.photos/320/200?image=${IDS[this.state.adsId]}`}
+          />
+        )}
         <CardBody>Our sponsor add</CardBody>
       </Card>
     );
   }
 }
+
+const AdsContainer = connect(
+  State,
+  Actions
+)(MyAdsContainer);
+export default AdsContainer;
