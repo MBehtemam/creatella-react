@@ -3,12 +3,13 @@ import { Card, CardBody, CardTitle, CardText, Button } from "reactstrap";
 
 export default class ProductContainer extends Component {
   render() {
+    const { id, price, date, face, size } = this.props.product;
     return (
       <Card>
         <div
           style={{
             textAlign: "center",
-            fontSize: 40,
+            fontSize: size,
             width: "100%",
             backgroundColor: "#CCCCCC",
             height: "100px",
@@ -17,10 +18,10 @@ export default class ProductContainer extends Component {
             alignItems: "center"
           }}
         >
-          <span>( .-. )</span>
+          <span>{face}</span>
         </div>
-        <CardText>3 days ago</CardText>
-        <Button color="primary">Buy $10</Button>
+        <CardText>{date}</CardText>
+        <Button color="primary">Buy {price}</Button>
       </Card>
     );
   }

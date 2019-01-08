@@ -2,10 +2,14 @@ import React, { Component, Fragment } from "react";
 import { Row, Col } from "reactstrap";
 import { connect } from "react-redux";
 import State from "Creatella-business-logic/Shared/components/Grid/State";
+import Actions from "Creatella-business-logic/Shared/components/Grid/Actions";
 import ProductContainer from "./ProductContainer";
 import AdsContainer from "./AdsContainer";
 
 class MyGrid extends Component {
+  componentDidMount() {
+    this.props.initialProducts();
+  }
   render() {
     let adsCounter = 0;
     return (
@@ -40,6 +44,6 @@ class MyGrid extends Component {
 
 const Grid = connect(
   State,
-  {}
+  Actions
 )(MyGrid);
 export default Grid;
