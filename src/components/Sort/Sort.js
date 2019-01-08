@@ -31,25 +31,11 @@ class Sort extends React.Component {
         <DropdownToggle caret>Sort By</DropdownToggle>
         <DropdownMenu>
           <DropdownItem header>Sort On Server</DropdownItem>
-          <DropdownItem
-            onClick={() =>
-              this.props.sortById(this.props.pagination, this.props.limit)
-            }
-          >
-            Id
-          </DropdownItem>
-          <DropdownItem
-            onClick={() =>
-              this.props.sortBySize(this.props.pagination, this.props.limit)
-            }
-          >
+          <DropdownItem onClick={() => this.props.sortById()}>Id</DropdownItem>
+          <DropdownItem onClick={() => this.props.sortBySize()}>
             Size
           </DropdownItem>
-          <DropdownItem
-            onClick={() =>
-              this.props.sortByPrice(this.props.pagination, this.props.limit)
-            }
-          >
+          <DropdownItem onClick={() => this.props.sortByPrice()}>
             Price
           </DropdownItem>
           <DropdownItem>Clear Sort</DropdownItem>

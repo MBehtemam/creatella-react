@@ -30,37 +30,13 @@ class MyLimit extends React.Component {
       <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
         <DropdownToggle caret>Limit By</DropdownToggle>
         <DropdownMenu>
-          <DropdownItem
-            onClick={() =>
-              this.props.setLimitProducts(
-                this.props.pagination,
-                20,
-                this.props.sortByOnServer
-              )
-            }
-          >
+          <DropdownItem onClick={() => this.props.setLimitProducts(20)}>
             20
           </DropdownItem>
-          <DropdownItem
-            onClick={() =>
-              this.props.setLimitProducts(
-                this.props.pagination,
-                40,
-                this.props.sortByOnServer
-              )
-            }
-          >
+          <DropdownItem onClick={() => this.props.setLimitProducts(40)}>
             40
           </DropdownItem>
-          <DropdownItem
-            onClick={() =>
-              this.props.setLimitProducts(
-                this.props.pagination,
-                60,
-                this.props.sortByOnServer
-              )
-            }
-          >
+          <DropdownItem onClick={() => this.props.setLimitProducts(60)}>
             60
           </DropdownItem>
           <DropdownItem>Clear Limit</DropdownItem>
