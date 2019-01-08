@@ -1,4 +1,7 @@
 import React from "react";
+import { connect } from "react-redux";
+import SortActions from "Creatella-business-logic/Shared/components/Sort/Actions";
+import SortState from "Creatella-business-logic/Shared/components/Sort/State";
 import {
   Dropdown,
   DropdownToggle,
@@ -6,7 +9,7 @@ import {
   DropdownItem
 } from "reactstrap";
 
-export default class Sort extends React.Component {
+class Sort extends React.Component {
   constructor(props) {
     super(props);
 
@@ -28,9 +31,27 @@ export default class Sort extends React.Component {
         <DropdownToggle caret>Sort By</DropdownToggle>
         <DropdownMenu>
           <DropdownItem header>Sort On Server</DropdownItem>
-          <DropdownItem>Id</DropdownItem>
-          <DropdownItem>Size</DropdownItem>
-          <DropdownItem>Price</DropdownItem>
+          <DropdownItem
+            onClick={() =>
+              this.props.sortById(this.props.pagination, this.props.limit)
+            }
+          >
+            Id
+          </DropdownItem>
+          <DropdownItem
+            onClick={() =>
+              this.props.sortBySize(this.props.pagination, this.props.limit)
+            }
+          >
+            Size
+          </DropdownItem>
+          <DropdownItem
+            onClick={() =>
+              this.props.sortByPrice(this.props.pagination, this.props.limit)
+            }
+          >
+            Price
+          </DropdownItem>
           <DropdownItem>Clear Sort</DropdownItem>
           <DropdownItem header disabled>
             Sort On Client
@@ -43,3 +64,10 @@ export default class Sort extends React.Component {
     );
   }
 }
+
+const SortDropDown = connect(
+  SortState,
+  SortActions
+)(Sort);
+
+export default SortDropDown;

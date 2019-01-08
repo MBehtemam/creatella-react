@@ -5,25 +5,30 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AdsContainer from "./components/Grid/AdsContainer";
 import ProductContainer from "./components/Grid/ProductContainer";
 import Sort from "./components/Sort/Sort";
+import Limit from "./components/Limit/Limit";
+import Store from "Creatella-business-logic/Shared/components/Store";
+import Grid from "./components/Grid";
+import { Provider } from "react-redux";
 class App extends Component {
   render() {
     return (
-      <Container>
-        <Navbar />
-        <Row>
-          <Col xs={6}>
-            <Sort />
-          </Col>
-        </Row>
-        <Row>
-          <Col xs={3}>
-            <AdsContainer />
-          </Col>
-          <Col xs={3}>
-            <ProductContainer />
-          </Col>
-        </Row>
-      </Container>
+      <Provider store={Store}>
+        <Container>
+          <Navbar />
+          <Row />
+          <Row>
+            <Col xs={2}>
+              <Sort />
+            </Col>
+            <Col xs={2}>
+              <Limit />
+            </Col>
+          </Row>
+          <Row>
+            <Grid />
+          </Row>
+        </Container>
+      </Provider>
     );
   }
 }
