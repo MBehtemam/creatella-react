@@ -8,6 +8,7 @@ import Sort from "./components/Sort/Sort";
 import Limit from "./components/Limit/Limit";
 import Store from "Creatella-business-logic/Shared/components/Store";
 import Grid from "./components/Grid";
+import Scroll from "./components/Scroll";
 import { Provider } from "react-redux";
 class App extends Component {
   render() {
@@ -25,7 +26,9 @@ class App extends Component {
             </Col>
           </Row>
           <Row>
-            <Grid />
+            <Scroll>
+              <Grid />
+            </Scroll>
           </Row>
         </Container>
       </Provider>
