@@ -14,8 +14,6 @@ class MyScroll extends Component {
 
   onScroll = () => {
     if (
-      //   window.innerHeight + window.scrollY >=
-      //   document.body.offsetHeight - 500
       window.innerHeight + document.documentElement.scrollTop ===
       document.documentElement.offsetHeight
     ) {

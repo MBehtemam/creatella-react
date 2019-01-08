@@ -10,6 +10,8 @@ import Store from "Creatella-business-logic/Shared/components/Store";
 import Grid from "./components/Grid";
 import Scroll from "./components/Scroll";
 import { Provider } from "react-redux";
+import Loading from "./components/Status/Loading";
+import EndOfProducts from "./components/Status/EndOfProducts";
 class App extends Component {
   render() {
     return (
@@ -24,11 +26,19 @@ class App extends Component {
             <Col xs={2}>
               <Limit />
             </Col>
+            <Col xs={2}>
+              <Loading />
+            </Col>
           </Row>
           <Row>
             <Scroll>
               <Grid />
             </Scroll>
+          </Row>
+          <Row>
+            <Col>
+              <EndOfProducts />
+            </Col>
           </Row>
         </Container>
       </Provider>
