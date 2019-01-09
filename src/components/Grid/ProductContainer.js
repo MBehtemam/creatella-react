@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Card, CardBody, CardTitle, CardText, Button } from "reactstrap";
+import { Card, CardText, Button } from "reactstrap";
 
 export default class ProductContainer extends Component {
   render() {
-    const { id, price, date, face, size } = this.props.product;
+    const { price, date, face, size } = this.props.product;
     return (
       <Card>
         <div
