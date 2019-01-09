@@ -19,7 +19,7 @@ class MyAdsContainer extends Component {
         {IDS.hasOwnProperty(this.state.adsId) && (
           <CardImg
             width="100%"
-            src={`https://picsum.photos/320/200?image=${IDS[this.state.adsId]}`}
+            src={`http://192.168.1.41:3000/ads?r=${IDS[this.state.adsId]}`}
           />
         )}
         <CardBody>Our sponsor add</CardBody>

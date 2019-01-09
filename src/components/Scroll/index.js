@@ -14,8 +14,8 @@ class MyScroll extends Component {
 
   onScroll = () => {
     if (
-      window.innerHeight + document.documentElement.scrollTop ===
-      document.documentElement.offsetHeight
+      window.innerHeight + window.scrollY >=
+      document.body.offsetHeight - 300
     ) {
       this.props.loadMoreProducts();
     }
