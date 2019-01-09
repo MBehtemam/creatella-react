@@ -5,7 +5,7 @@ export default class ProductContainer extends Component {
   render() {
     const { price, date, face, size } = this.props.product;
     return (
-      <Card>
+      <Card style={{ marginTop: "10px", marginBottom: "10px" }}>
         <div
           style={{
             textAlign: "center",

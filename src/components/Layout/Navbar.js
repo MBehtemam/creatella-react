@@ -8,6 +8,7 @@ export default class MyNavbar extends Component {
     return (
       <Navbar color="light" light expand="md" sticky="top">
         <NavbarBrand>Creatella</NavbarBrand>
+
         <Collapse isOpen={true} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
