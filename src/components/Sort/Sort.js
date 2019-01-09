@@ -3,55 +3,33 @@ import { connect } from "react-redux";
 import SortActions from "Creatella-business-logic/Shared/components/Sort/Actions";
 import SortState from "Creatella-business-logic/Shared/components/Sort/State";
 import {
-  Dropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  UncontrolledDropdown
 } from "reactstrap";
 
 class Sort extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      dropdownOpen: false
-    };
-  }
-
-  toggle() {
-    this.setState(prevState => ({
-      dropdownOpen: !prevState.dropdownOpen
-    }));
-  }
-
   render() {
     return (
-      <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-        <DropdownToggle caret>
+      <UncontrolledDropdown nav inNavbar>
+        <DropdownToggle nav caret>
           Sort By{" "}
           {this.props.sortByOnServer && (
             <span>{this.props.sortByOnServer}</span>
           )}
         </DropdownToggle>
-        <DropdownMenu>
-          <DropdownItem header>Sort On Server</DropdownItem>
+        <DropdownMenu right>
           <DropdownItem onClick={() => this.props.sortById()}>Id</DropdownItem>
-          <DropdownItem onClick={() => this.props.sortBySize()}>
-            Size
-          </DropdownItem>
           <DropdownItem onClick={() => this.props.sortByPrice()}>
             Price
           </DropdownItem>
-          <DropdownItem>Clear Sort</DropdownItem>
-          <DropdownItem header disabled>
-            Sort On Client
+          <DropdownItem onClick={() => this.props.sortBySize()}>
+            Size
           </DropdownItem>
-          <DropdownItem>Id</DropdownItem>
-          <DropdownItem>Size</DropdownItem>
-          <DropdownItem>Price</DropdownItem>
+          <DropdownItem>Reset Sort</DropdownItem>
         </DropdownMenu>
-      </Dropdown>
+      </UncontrolledDropdown>
     );
   }
 }

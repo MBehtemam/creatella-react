@@ -1,15 +1,23 @@
 import React, { Component } from "react";
-import { Row, Col, Navbar, NavbarBrand } from "reactstrap";
+import { Navbar, NavbarBrand, Collapse, Nav, NavItem } from "reactstrap";
+import Sort from "../Sort/Sort";
+import Limit from "../Limit/Limit";
+import Loading from "../Status/Loading";
 export default class MyNavbar extends Component {
   render() {
     return (
-      <Row>
-        <Col>
-          <Navbar color="light" light expand="md">
-            <NavbarBrand>Creatella</NavbarBrand>
-          </Navbar>
-        </Col>
-      </Row>
+      <Navbar color="light" light expand="md" sticky="top">
+        <NavbarBrand>Creatella</NavbarBrand>
+        <Collapse isOpen={true} navbar>
+          <Nav className="ml-auto" navbar>
+            <NavItem>
+              <Loading />
+            </NavItem>
+            <Sort />
+            <Limit />
+          </Nav>
+        </Collapse>
+      </Navbar>
     );
   }
 }

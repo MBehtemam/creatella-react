@@ -3,33 +3,20 @@ import { connect } from "react-redux";
 import State from "Creatella-business-logic/Shared/components/Limit/State";
 import Actions from "Creatella-business-logic/Shared/components/Limit/Actions";
 import {
-  Dropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  UncontrolledDropdown
 } from "reactstrap";
 
 class MyLimit extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      dropdownOpen: false
-    };
-  }
-
-  toggle() {
-    this.setState(prevState => ({
-      dropdownOpen: !prevState.dropdownOpen
-    }));
-  }
-
   render() {
     return (
-      <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-        <DropdownToggle caret>Limit By</DropdownToggle>
-        <DropdownMenu>
+      <UncontrolledDropdown nav inNavbar>
+        <DropdownToggle nav caret>
+          Limit By {this.props.limit && <span>{this.props.limit}</span>}
+        </DropdownToggle>
+        <DropdownMenu right>
           <DropdownItem onClick={() => this.props.setLimitProducts(20)}>
             20
           </DropdownItem>
@@ -41,7 +28,7 @@ class MyLimit extends React.Component {
           </DropdownItem>
           <DropdownItem>Clear Limit</DropdownItem>
         </DropdownMenu>
-      </Dropdown>
+      </UncontrolledDropdown>
     );
   }
 }

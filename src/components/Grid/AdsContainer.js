@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Card, CardImg, CardText, CardBody } from "reactstrap";
+import { Card, CardImg, CardBody } from "reactstrap";
 import Actions from "Creatella-business-logic/Shared/components/Ads/Actions";
 import State from "Creatella-business-logic/Shared/components/Ads/State";
 class MyAdsContainer extends Component {
