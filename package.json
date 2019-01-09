@@ -5,6 +5,7 @@
   "dependencies": {
     "Creatella-business-logic": "git+https://github.com/MBehtemam/cretella-business-logic.git",
     "bootstrap": "^4.2.1",
+    "config": "^3.0.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-redux": "^6.0.0",

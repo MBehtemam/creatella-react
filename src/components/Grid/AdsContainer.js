@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { Card, CardImg, CardBody } from "reactstrap";
 import Actions from "Creatella-business-logic/Shared/components/Ads/Actions";
 import State from "Creatella-business-logic/Shared/components/Ads/State";
+import Constants from "../../config/default";
+
 class MyAdsContainer extends Component {
   state = {
     adsId: null
@@ -19,7 +21,7 @@ class MyAdsContainer extends Component {
         {IDS.hasOwnProperty(this.state.adsId) && (
           <CardImg
             width="100%"
-            src={`http://192.168.1.41:3000/ads?r=${IDS[this.state.adsId]}`}
+            src={`${Constants.AdsServerUrl}${IDS[this.state.adsId]}`}
           />
         )}
         <CardBody>Our sponsor add</CardBody>
