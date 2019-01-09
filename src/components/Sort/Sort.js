@@ -28,7 +28,12 @@ class Sort extends React.Component {
   render() {
     return (
       <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-        <DropdownToggle caret>Sort By</DropdownToggle>
+        <DropdownToggle caret>
+          Sort By{" "}
+          {this.props.sortByOnServer && (
+            <span>{this.props.sortByOnServer}</span>
+          )}
+        </DropdownToggle>
         <DropdownMenu>
           <DropdownItem header>Sort On Server</DropdownItem>
           <DropdownItem onClick={() => this.props.sortById()}>Id</DropdownItem>
